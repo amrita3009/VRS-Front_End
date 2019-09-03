@@ -1,0 +1,38 @@
+<div class="card">
+  <div class="card-header">
+    <div class="utils__title">
+      <strong>
+        Departments List
+      </strong>
+    </div>
+  </div>
+  <div class="card-body">
+    <nz-table #productsTable [nzData]="displayProductsData">
+      <thead (nzSortChange)="sort($event)" nzSingleSort>
+      <tr>
+        <th nzShowSort nzSortKey="id">ID</th>
+        <th nzShowSort nzSortKey="name">Name</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of productsTable.data">
+        <td>
+          <a href="javascript: void(0);" class="utils__link--underlined">
+            #{{item.id}}
+          </a>
+        </td>
+        <td>
+          <a class="utils__link--underlined" href="javascript: void(0);">
+            {{item.name}}
+          </a>
+        </td>
+        <td>
+          <button nz-button class="mr-1" nzSize="small"><i nz-icon type="edit" theme="outline"></i> Edit</button>
+          <button nz-button class="mr-1" nzSize="small"><i nz-icon type="delete" theme="outline"></i> Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>
