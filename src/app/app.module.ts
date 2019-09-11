@@ -12,12 +12,14 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { DepartmentsListComponent } from './pages/departments/departments-list/departments-list.component';
 import { VendorsModule } from './pages/vendors/vendors.module';
+import { AddEditDepartmentComponent } from './pages/departments/add-edit-department/add-edit-department.component';
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    DepartmentsListComponent
+    DepartmentsListComponent,
+    AddEditDepartmentComponent
   ],
   imports: [
     BrowserModule,

@@ -22,6 +22,7 @@ export class DepartmentsListComponent implements OnInit {
     this.departments$ = this.departmentService.getDepartments();
   }
   showModal(): void {
+    console.log("122222222",this)
     this.isVisible = true;
   }
   handleOk(): void {

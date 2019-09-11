@@ -12,7 +12,8 @@ export class DepartmentsService {
     return this.http.get<Department[]>(`https://localhost:44398/api/departments`);
   }
   public addDepartment(name: String): Observable<Department[]> {
-    return this.http.post<Department[]>(`https://localhost:44398/api/departments`, {'deptName': name});
+    console.log("API call",name)
+    return this.http.post<Department[]>(`https://localhost:44398/api/departments`, JSON.stringify({value: name}));
   }
   public editDepartment(id: Number, name: String): Observable<Department[]> {
     return this.http.post<Department[]>(`https://localhost:44398/api/departments/${id}`,{'deptName': name});
