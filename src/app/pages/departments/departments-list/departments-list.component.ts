@@ -1,53 +1,36 @@
-import { Component } from '@angular/core'
-declare var require: any
-const data: any = require('./data.json')
+import { Component, OnInit } from '@angular/core';
+
+import { Department } from '../../../services/departments/department';
+import { DepartmentsService } from '../../../services/departments/departments.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-ecommerce-products-list',
   templateUrl: './departments-list.component.html',
   styleUrls: ['./departments-list.component.scss'],
 })
-export class DepartmentsListComponent {
-  productsData = data.data
-  displayProductsData = [...this.productsData]
-  sortName = null
-  sortValue = null
-  listOfSearchName = []
-  searchAddress: string
+export class DepartmentsListComponent implements OnInit {
 
-  sort(sort: { key: string; value: string }): void {
-    this.sortName = sort.key
-    this.sortValue = sort.value
-    this.search()
+  departments: Department[];
+  isVisible = false;
+
+  departments$: Observable<Department[]>;
+
+  constructor(private departmentService: DepartmentsService) { }
+
+  ngOnInit() {
+    this.departments$ = this.departmentService.getDepartments();
   }
-
-  filter(listOfSearchName: string[], searchAddress: string): void {
-    this.listOfSearchName = listOfSearchName
-    this.searchAddress = searchAddress
-    this.search()
+  showModal(): void {
+    this.isVisible = true;
   }
-
-  search(): void {
-    // /** filter data **/
-    const filterFunc = item =>
-      (this.searchAddress ? item.address.indexOf(this.searchAddress) !== -1 : true) &&
-      (this.listOfSearchName.length
-        ? this.listOfSearchName.some(name => item.name.indexOf(name) !== -1)
-        : true)
-    const data = this.productsData.filter(item => filterFunc(item))
-    /** sort data **/
-    if (this.sortName && this.sortValue) {
-      this.displayProductsData = data.sort((a, b) =>
-        this.sortValue === 'ascend'
-          ? a[this.sortName] > b[this.sortName]
-            ? 1
-            : -1
-          : b[this.sortName] > a[this.sortName]
-          ? 1
-          : -1,
-      )
-    } else {
-      this.displayProductsData = data
-    }
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
   }
 }
+

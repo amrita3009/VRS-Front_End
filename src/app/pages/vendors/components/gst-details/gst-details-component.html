@@ -1,0 +1,14 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>GSTN Number</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+            <input nz-input placeholder="GSTN" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24">UIN Number</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+            <input nz-input placeholder="UIN" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+</form>

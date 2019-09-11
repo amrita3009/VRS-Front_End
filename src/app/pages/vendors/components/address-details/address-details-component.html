@@ -1,0 +1,62 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Country</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <nz-select
+            style="width: 200px;"
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Select a person"
+            [(ngModel)]="selectedValue"
+        >
+            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Pincode</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+            <nz-select
+                style="width: 200px;"
+                nzShowSearch
+                nzAllowClear
+                nzPlaceHolder="Select pincode"
+                [(ngModel)]="selectedValue"
+            >
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+            </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>STATE/UT</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+            <nz-select
+            style="width: 200px;"
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Select a state"
+            [(ngModel)]="selectedValue"
+        >
+            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Destrict/City</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="City" [(ngModel)]="value" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Street/House No</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="Street" [(ngModel)]="value" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>

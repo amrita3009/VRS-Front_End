@@ -4,10 +4,11 @@
       <strong>
         Departments List
       </strong>
+      <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Add a modal</span></button>
     </div>
   </div>
   <div class="card-body">
-    <nz-table #productsTable [nzData]="displayProductsData">
+    <nz-table #productsTable [nzData]="departments$ | async">
       <thead (nzSortChange)="sort($event)" nzSingleSort>
       <tr>
         <th nzShowSort nzSortKey="id">ID</th>
@@ -19,12 +20,12 @@
       <tr *ngFor="let item of productsTable.data">
         <td>
           <a href="javascript: void(0);" class="utils__link--underlined">
-            #{{item.id}}
+            #{{item.deptId}}
           </a>
         </td>
         <td>
           <a class="utils__link--underlined" href="javascript: void(0);">
-            {{item.name}}
+            {{item.deptName}}
           </a>
         </td>
         <td>
@@ -35,4 +36,8 @@
       </tbody>
     </nz-table>
   </div>
+  <nz-modal [(nzVisible)]="isVisible" nzTitle="Add/Edit a department" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <input nz-input placeholder="Department name" [(ngModel)]="value" />
+    <button class="plusBtn" type="button">Add</button>
+  </nz-modal>
 </div>

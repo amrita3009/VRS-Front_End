@@ -1,0 +1,44 @@
+<nz-steps [nzCurrent]="current">
+  <nz-step nzTitle="Personal details"></nz-step>
+  <nz-step nzTitle="Address details"></nz-step>
+  <nz-step nzTitle="Banking details"></nz-step>
+  <nz-step nzTitle="GST details"></nz-step>
+  <nz-step nzTitle="Attachments"></nz-step>
+  <nz-step nzTitle="Declarations"></nz-step>
+</nz-steps>
+
+<div class="steps-content" *ngIf="index === 'personal-details'">
+  <personal-details></personal-details>
+</div>
+<div class="steps-content" *ngIf="index === 'address-details'">
+  <address-details></address-details>
+</div>
+<div class="steps-content" *ngIf="index === 'banking-details'">
+  <banking-details></banking-details>
+</div>
+<div class="steps-content" *ngIf="index === 'gst-details'">
+  <gst-details></gst-details>
+</div>
+<div class="steps-content" *ngIf="index === 'attachments'">
+  <attachments></attachments>
+</div>
+<div class="steps-content" *ngIf="index === 'declaration'">
+  <declaration></declaration>
+  <button nz-button nzType="default">
+    <span>Save and Continue Later</span>
+  </button>
+  <button>
+    <span>Submit</span>
+  </button>
+</div>
+<div class="steps-action">
+  <button nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
+    <span>Previous</span>
+  </button>
+  <button nz-button nzType="default" (click)="next()" *ngIf="current < 5">
+    <span>Next</span>
+  </button>
+  <button nz-button nzType="primary" (click)="done()" *ngIf="current === 6">
+    <span>Done</span>
+  </button>
+</div>

@@ -1,0 +1,16 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-checkbox-wrapper style="width: 100%;" (nzOnChange)="log($event)">
+        <div nz-row>
+            <div nz-col>
+                <label nz-checkbox nzValue="A" [ngModel]="true">
+                    I/We confirm that information provided above is true to my knowledge and belief.
+                </label>
+            </div>
+            <div nz-col>
+                <label nz-checkbox nzValue="B">
+                    I/We declare that we will file the GST returns and pay the GST amount within the due dates as prescribed in GST laws.
+                </label>
+            </div>
+        </div>
+    </nz-checkbox-wrapper>        
+</form>

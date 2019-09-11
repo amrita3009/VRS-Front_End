@@ -1,0 +1,82 @@
+<div class="card">
+  <div class="card-header">
+    <div class="utils__title">
+      <strong>
+        Vendors List
+      </strong>
+      <button nz-button nzType="primary" routerLink="/vendor-add">Add Vendor</button>
+    </div>
+  </div>
+  <div class="card-body">
+    <nz-table #productsTable [nzData]="displayProductsData">
+      <thead (nzSortChange)="sort($event)" nzSingleSort>
+        <tr>
+          <th nzShowSort nzSortKey="id">ID</th>
+          <th nzShowSort nzSortKey="name">Vendor Name</th>
+          <th nzShowSort nzSortKey="type">Type</th>
+          <!--
+          <th nzShowSort nzSortKey="pan">PAN</th>
+          <th nzShowSort nzSortKey="gst">SKU</th>
+          <th nzShowSort nzSortKey="account">Account</th>
+          -->
+          <th nzShowSort nzSortKey="contact">Contact</th>
+          <th nzShowSort nzSortKey="email">Email</th>
+          <th nzShowSort nzSortKey="status">Status</th>
+          <th nzShowSort nzSortKey="status">Exception</th>
+          <th nzShowSort nzSortKey="status">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of productsTable.data">
+          <td>
+            <a href="javascript: void(0);" class="utils__link--underlined"> #{{ item.id }} </a>
+          </td>
+          <td>
+            <a class="utils__link--underlined" href="javascript: void(0);">
+              {{ item.name }}
+            </a>
+          </td>
+          <td>
+            {{ item.type }}
+          </td>
+          <!--
+          <td>
+            {{ item.pan }}
+          </td>
+          <td>
+            {{ item.gst }}
+          </td>
+          <td>${{ item.account }}</td>
+          -->
+          <td>
+            {{ item.contact }}
+          </td>
+          <td>
+            {{ item.email }}
+          </td>
+          <td>
+            <span
+              [ngClass]="[
+                item.status === 'New'
+                  ? 'badge badge-danger font-size-12'
+                  : 'badge badge-success font-size-12'
+              ]"
+            >
+              {{ item.status }}
+            </span>
+          </td>
+          <td>
+            <span *ngIf="item.exception" [ngClass]="['badge badge-warning font-size-12']">
+              Exception
+            </span>
+          </td>
+          <td>
+            <button nz-button class="mr-1" nzSize="small">
+              <i nz-icon type="edit" theme="outline"></i> Details
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Name of Vendor</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="Vendor Name" [(ngModel)]="value" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>PAN No</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="PAN" [(ngModel)]="value" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Name of the Company</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="Company name" [(ngModel)]="value" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Email</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="Email" [(ngModel)]="value" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Contact No</nz-form-label>
+      <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="Email" [(ngModel)]="value" />
+      </nz-form-control>
+    </nz-form-item>
+  </form>

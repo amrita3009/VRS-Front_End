@@ -1,0 +1,86 @@
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Account Holder Name</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+            <input nz-input placeholder="Name" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Bank Name</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+        <nz-select
+            style="width: 200px;"
+            nzShowSearch
+            nzAllowClear
+            nzPlaceHolder="Select a bank"
+            [(ngModel)]="selectedValue"
+        >
+            <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+            <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+            <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+        </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Pincode</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+            <nz-select
+                style="width: 200px;"
+                nzShowSearch
+                nzAllowClear
+                nzPlaceHolder="Select pincode"
+                [(ngModel)]="selectedValue"
+            >
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Branch name</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="Branch name" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Account Number</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="Account Number" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Account type</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+            <nz-select
+                style="width: 200px;"
+                nzShowSearch
+                nzAllowClear
+                nzPlaceHolder="Select account type"
+                [(ngModel)]="selectedValue"
+            >
+                <nz-option nzLabel="Jack" nzValue="jack"></nz-option>
+                <nz-option nzLabel="Lucy" nzValue="lucy"></nz-option>
+                <nz-option nzLabel="Tom" nzValue="tom"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>IFSC code</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="IFSC code" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>MICR</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="MICR" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>SWIFT</nz-form-label>
+        <nz-form-control [nzSm]="16" [nzXs]="24">
+        <input nz-input placeholder="SWIFT" [(ngModel)]="value" />
+        </nz-form-control>
+    </nz-form-item>
+</form>

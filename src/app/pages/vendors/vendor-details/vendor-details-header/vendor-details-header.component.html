@@ -1,0 +1,37 @@
+<nz-page-header nzBackIcon>
+  <nz-page-header-title>Scoop</nz-page-header-title>
+  <nz-page-header-tags>
+    <nz-tag [nzColor]="'blue'">Direct</nz-tag>
+    <nz-tag [nzColor]="'green'">Approved</nz-tag>
+    <nz-tag [nzColor]="'red'">Exception</nz-tag>
+  </nz-page-header-tags>
+  <nz-page-header-extra>
+    <button nz-button nzType="primary">Edit</button>
+    <button nz-button nzType="default">Deactivate</button>
+    <button nz-button nzType="danger">Delete</button>
+  </nz-page-header-extra>
+  <nz-page-header-content>
+    <nz-row nzType="flex" nzJustify="start" class="extra-content" nzGutter="8">
+      <nz-col nzSpan="8">
+        <span class="label">Contact Person</span>
+        <p class="detail">Indradeep Biswas</p>
+      </nz-col>
+      <nz-col nzSpan="8">
+        <span class="label">Email</span>
+        <p class="detail">indradeep.biswas@isha.in</p>
+      </nz-col>
+      <nz-col nzSpan="8">
+        <span class="label">Phone</span>
+        <p class="detail">+919876543210</p>
+      </nz-col>
+    </nz-row>
+  </nz-page-header-content>
+  <nz-page-header-footer>
+    <nz-tabset [nzSelectedIndex]="0">
+      <nz-tab nzTitle="Address"></nz-tab>
+      <nz-tab nzTitle="Banking"></nz-tab>
+      <nz-tab nzTitle="GST"></nz-tab>
+      <nz-tab nzTitle="Attachments"></nz-tab>
+    </nz-tabset>
+  </nz-page-header-footer>
+</nz-page-header>
